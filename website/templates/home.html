@@ -4,9 +4,53 @@
 
 {% block content %}
 
-<div class="flex flex-col justify-center items-center text-gray-500 bg-green-200">
+<div class="flex flex-col justify-center items-center text-gray-500">
   {% if user.is_authenticated %}
-    <div>Welcome</div>
+    <!-- <div>Welcome</div> -->
+    <!-- 1:26:26 -->
+    <div>Records Records...</div>
+
+    <table class="table-auto">
+      <thead>
+        <tr class="border-b border-t bg-gray-50">
+          <th class=" px-7 py-2">ID</th>
+          <th class=" px-7 py-2">First Name</th>
+          <th class=" px-7 py-2">Last Name</th>
+          <th class=" px-7 py-2"> Email </th>
+          <th class=" px-7 py-2"> Phone </th>
+          <th class=" px-7 py-2"> Address </th>
+          <th class=" px-7 py-2"> City </th>
+          <th class=" px-7 py-2"> State </th>
+          <th class=" px-7 py-2">Zipcode </th>
+          <th class=" px-7 py-2">Created At </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if records %}
+          
+          {% for record in records%}
+          <tr class="text-xs">
+            <th>{{ record.id }}</th>
+            <th>{{ record.first_name }}</th>
+            <th>{{ record.last_name }}</th>
+            <th>{{ record.email }}</th>
+            <th>{{ record.phone }}</th>
+            <th>{{ record.address }}</th>
+            <th>{{ record.city }}</th>
+            <th>{{ record.state }}</th>
+            <th>{{ record.zipcode }}</th>
+            <th>{{ record.created_at}}</th>
+          </tr>
+          {% endfor %}
+          
+        {% endif %}
+      </tbody>
+
+    </table>
+
+     
+
+
   {% else %}
   <div class="text-5xl font-semibold my-5">Login</div>
 
