@@ -30,16 +30,16 @@
           
           {% for record in records%}
           <tr class="text-xs">
-            <th>{{ record.id }}</th>
-            <th>{{ record.first_name }}</th>
-            <th>{{ record.last_name }}</th>
-            <th>{{ record.email }}</th>
-            <th>{{ record.phone }}</th>
-            <th>{{ record.address }}</th>
-            <th>{{ record.city }}</th>
-            <th>{{ record.state }}</th>
-            <th>{{ record.zipcode }}</th>
-            <th>{{ record.created_at}}</th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.id }}</a></th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.first_name }}</a></th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.last_name }}</a></th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.email }}</a></th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.phone }}</a></th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.address }}</a></th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.city }}</a></th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.state }}</a></th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.zipcode }}</a></th>
+              <th class="py-2"><a href="{% url 'record' record.id %}">{{ record.created_at}}</a></th>              
           </tr>
           {% endfor %}
           

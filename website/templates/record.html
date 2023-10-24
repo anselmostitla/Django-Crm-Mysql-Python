@@ -2,10 +2,40 @@
 
 {% block content %}
 
-<div class="text-4xl">Customer Record</div>
+<div class="text-4xl my-5">Customer Record</div>
+
+<div class="border">
+  <div class="border px-5 py-2">
+    <strong>Name: </strong>
+    {{ customer_record.first_name }}
+    {{ customer_record.last_name }}
+  </div>
+</div>
+<div class="border px-5 py-2 space-y-1">
+  <p></p><strong>Email: </strong>{{ customer_record.email }}</p>
+  <p></p><strong>Phone: </strong>{{ customer_record.phone }}</p>
+  <p></p><strong>Address: </strong>{{ customer_record.address }}</p>
+  <p></p><strong>City: </strong>{{ customer_record.city }}</p>
+  <p></p><strong>State: </strong>{{ customer_record.state }}</p>
+  <p></p><strong>Zipcode: </strong>{{ customer_record.zipcode }}</p>
+  <p></p><strong>Created At: </strong>{{ customer_record.created_at}}</p> 
+</div>
+<br>
+<a href="{% url 'home' %}" class="bg-gray-400 px-10 py-2 text-white text-xl hover:bg-gray-500 rounded mr-3">
+  Back
+</a>
+<a href="{% url 'delete_record' customer_record.id %}" class="bg-red-500 px-10 py-2 text-white text-xl hover:bg-red-600 rounded mr-3">
+  Delete
+</a>
+<a href="{% url 'update_record' customer_record.id %}" class="bg-gray-400 px-10 py-2 text-white text-xl hover:bg-gray-500 rounded mr-3">
+  Update Record
+</a>
 
 
 
+
+
+  
 
 
 {% endblock %}

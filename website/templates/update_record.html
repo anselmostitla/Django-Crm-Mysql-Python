@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="flex flex-col items-center">
+  <div class="text-4xl my-5">Update Record</div>
+
+  <form method="POST" class="w-[50%]">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button class="bg-blue-500 text-white text-2xl my-5 rounded w-full hover:bg-blue-600 py-4 ">
+      Update Record
+    </button>
+
+  </form>
+</div>
+
+
+
+{% endblock %}
